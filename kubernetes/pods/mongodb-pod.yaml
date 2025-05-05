@@ -6,5 +6,12 @@ spec:
   containers:
     - name: mongodb
       image: mongo
+      resources:
+        requests:
+          cpu: 100m
+          memory: 128M
+        limits:
+          cpu: 250m
+          memory: 256M
       ports:
       - containerPort: 27017
