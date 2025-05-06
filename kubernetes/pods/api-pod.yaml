@@ -1,11 +1,14 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: mongodb-pod
+  name: api-pod
 spec:
   containers:
-    - name: mongodb
-      image: mongo
+    - name: simple-node-api
+      image: finthos/simple-node-api
+      env:
+        - name: PORT
+          value: '8080'
       resources:
         requests:
           cpu: 100m
@@ -14,4 +17,4 @@ spec:
           cpu: 250m
           memory: 256M
       ports:
-      - containerPort: 27017
+      - containerPort: 2345
