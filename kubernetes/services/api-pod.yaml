@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: api-pod
+  name: simple-api-pod
+  labels:
+    app: simple-api
 spec:
   containers:
     - name: simple-node-api
       image: finthos/simple-node-api
-      env:
-        - name: PORT
-          value: '8080'
       ports:
       - containerPort: 2345
+        name: 'porta-api'
